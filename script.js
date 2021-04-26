@@ -86,9 +86,9 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'Cuanto es 2 x 4?  (Haga doble click para seleccionar la respuesta)',
+    question: 'Cual de estos es un nombre?  (Haga doble click para seleccionar la respuesta)',
     answers: [
-      { text: '8', correct: true },
+      { text: 'josue', correct: true },
       { text: '22', correct: false }
     ]
   },
@@ -102,10 +102,10 @@ const questions = [
     ]
   },
   {
-    question: 'Cuanto es 2 + 2?  (Haga doble click para seleccionar la respuesta)',
+    question: 'cual de estos es un color?  (Haga doble click para seleccionar la respuesta)',
     answers: [
-      { text: '6', correct: false },
-      { text: '4', correct: true },
+      { text: '1', correct: false },
+      { text: 'rojo', correct: true },
       { text: '7', correct: false },
       { text: '9', correct: false }
     ]
