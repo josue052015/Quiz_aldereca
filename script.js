@@ -8,7 +8,7 @@ let reiniciar = false;
 
 let shuffledQuestions, currentQuestionIndex
 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('dblclick', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion()
@@ -64,7 +64,7 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'terminar'
+    startButton.innerText = 'Haga doble click para terminar'
   reiniciar= true;
     startButton.classList.remove('hide')
   }
