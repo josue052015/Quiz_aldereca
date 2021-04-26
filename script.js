@@ -4,6 +4,8 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
+let reiniciar = false;
+
 let shuffledQuestions, currentQuestionIndex
 
 startButton.addEventListener('click', startGame)
@@ -13,6 +15,10 @@ nextButton.addEventListener('click', () => {
 })
 
 function startGame() {
+    if(reiniciar)
+    {
+        location.reload();
+    }
   startButton.classList.add('hide')
   shuffledQuestions = questions.sort(() => Math.random() - .5)
   currentQuestionIndex = 0
@@ -58,7 +64,8 @@ function selectAnswer(e) {
   if (shuffledQuestions.length > currentQuestionIndex + 1) {
     nextButton.classList.remove('hide')
   } else {
-    startButton.innerText = 'Restart'
+    startButton.innerText = 'terminar'
+  reiniciar= true;
     startButton.classList.remove('hide')
   }
 }
@@ -79,14 +86,14 @@ function clearStatusClass(element) {
 
 const questions = [
   {
-    question: 'Cuanto es 2 x 4?',
+    question: 'Cuanto es 2 x 4?  (Haga doble click para seleccionar la respuesta)',
     answers: [
       { text: '8', correct: true },
       { text: '22', correct: false }
     ]
   },
   {
-    question: 'Cual es un nombre de mujer?',
+    question: 'Cual es un nombre de mujer?  (Haga doble click para seleccionar la respuesta)',
     answers: [
       { text: 'Daniel', correct: false },
       { text: 'Daniela', correct: true },
@@ -95,7 +102,7 @@ const questions = [
     ]
   },
   {
-    question: 'Cuanto es 2 + 2?',
+    question: 'Cuanto es 2 + 2?  (Haga doble click para seleccionar la respuesta)',
     answers: [
       { text: '6', correct: false },
       { text: '4', correct: true },
